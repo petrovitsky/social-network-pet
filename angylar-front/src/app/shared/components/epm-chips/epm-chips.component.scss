@@ -1,0 +1,55 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+  flex-shrink: 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 4px 0;
+  border: solid 1px $color-grey;
+  border-radius: 20px;
+  user-select: none;
+  cursor: auto;
+
+  &.active {
+    background-color: $color-lightest-grey;
+    border: solid 1px $color-primary-highlight;
+  }
+
+  &.editable {
+    cursor: pointer;
+  }
+
+  .interest-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+  }
+
+  .description {
+    @include font-medium;
+    font-size: 16px;
+    line-height: 24px;
+    white-space: nowrap;
+
+    &.left {
+      margin-left: 16px;
+    }
+
+    &.right {
+      margin-right: 16px;
+    }
+  }
+
+  .action-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+  }
+}
